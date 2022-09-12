@@ -1,0 +1,42 @@
+PODS:
+  - Alamofire (5.4.4)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
+  - GTProgressBar (0.3.3)
+  - IQKeyboardManagerSwift (6.5.6)
+  - MBCircularProgressBar (0.3.5)
+  - SVProgressHUD (2.2.5)
+  - VBRRollingPit (1.0.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - Charts
+  - GTProgressBar
+  - IQKeyboardManagerSwift
+  - MBCircularProgressBar
+  - SVProgressHUD
+  - VBRRollingPit
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Charts
+    - GTProgressBar
+    - IQKeyboardManagerSwift
+    - MBCircularProgressBar
+    - SVProgressHUD
+    - VBRRollingPit
+
+SPEC CHECKSUMS:
+  Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
+  GTProgressBar: a480283ecb0ada50de16c71e634892826928f640
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  MBCircularProgressBar: 0b795b722a5eb5b0923822f90474e2576a1a7855
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  VBRRollingPit: 62a79cc663aeea6a196878b3a907056617f96b6a
+
+PODFILE CHECKSUM: 244b074988032a6e087c1b4f512bc07ec82a4385
+
+COCOAPODS: 1.9.3

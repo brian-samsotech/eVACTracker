@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Drop Menu View Controller-->
+        <scene sceneID="isC-zN-YBC">
+            <objects>
+                <viewController storyboardIdentifier="STDropMenuViewController" id="dr1-VP-xgf" customClass="STDropMenuViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="axQ-ci-bjt">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMD-eU-5FP">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <connections>
+                                    <action selector="closeDropDown:" destination="dr1-VP-xgf" eventType="touchUpInside" id="dlZ-O1-i7u"/>
+                                </connections>
+                            </button>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nz4-2s-Fho">
+                                <rect key="frame" x="0.0" y="20" width="375" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="STDropMenuCell" id="nqa-7a-xWL" customClass="STDropMenuCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="17.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nqa-7a-xWL" id="cgL-s6-NKA">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="17.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Aq2-sD-4PD" customClass="SmallLabel" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="0.0" width="35.5" height="17.5"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Aq2-sD-4PD" firstAttribute="height" secondItem="cgL-s6-NKA" secondAttribute="height" id="GNW-X6-6El"/>
+                                                <constraint firstItem="Aq2-sD-4PD" firstAttribute="leading" secondItem="cgL-s6-NKA" secondAttribute="leading" constant="8" id="MgZ-eY-wUf"/>
+                                                <constraint firstItem="Aq2-sD-4PD" firstAttribute="centerY" secondItem="cgL-s6-NKA" secondAttribute="centerY" id="hoj-sq-ABs"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contentLabel" destination="Aq2-sD-4PD" id="IFQ-81-NzT"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cWJ-5c-cgI"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="IMD-eU-5FP" firstAttribute="bottom" secondItem="cWJ-5c-cgI" secondAttribute="bottom" id="Sf5-ri-DHS"/>
+                            <constraint firstItem="IMD-eU-5FP" firstAttribute="top" secondItem="cWJ-5c-cgI" secondAttribute="top" id="k2J-p8-yeQ"/>
+                            <constraint firstItem="IMD-eU-5FP" firstAttribute="trailing" secondItem="cWJ-5c-cgI" secondAttribute="trailing" id="lES-RK-9HZ"/>
+                            <constraint firstItem="IMD-eU-5FP" firstAttribute="leading" secondItem="cWJ-5c-cgI" secondAttribute="leading" id="vlr-7L-8oS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Nz4-2s-Fho" id="2wZ-cS-xGZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ku9-af-g4K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="198" y="140"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="cwJ-79-lZh">
+            <objects>
+                <viewController storyboardIdentifier="STDatePickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zfs-LW-J2k" customClass="STDatePickerViewController" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="HsS-lo-QDa">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nqS-Ec-lKm" userLabel="Tap to Exit">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="N2t-CE-631" appends="YES" id="s6i-tP-Prm"/>
+                                </connections>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ttC-Ob-9fX" customClass="STView">
+                                <rect key="frame" x="0.0" y="724" width="400" height="300"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Edb-t6-gAf">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="264"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="cNn-nx-a5Q">
+                                        <rect key="frame" x="0.0" y="265" width="400" height="35"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GbF-WZ-aJv" customClass="OkuraButton2" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="199.5" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="tintColor" red="0.0039215686269999999" green="0.25882352939999997" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Cancel">
+                                                    <color key="titleColor" red="0.40000000000000002" green="0.1960784314" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onCancel:" destination="zfs-LW-J2k" eventType="touchUpInside" id="7K1-Ii-9Et"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsM-9M-1BR" customClass="OkuraButton2" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                <rect key="frame" x="200.5" y="0.0" width="199.5" height="35"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="tintColor" red="0.0039215686269999999" green="0.25882352939999997" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Ok">
+                                                    <color key="titleColor" red="0.40000000000000002" green="0.1960784314" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="onClickSetDateButton:" destination="zfs-LW-J2k" eventType="touchUpInside" id="7Ke-fv-jsA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="k2z-55-GEN"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Edb-t6-gAf" firstAttribute="top" secondItem="ttC-Ob-9fX" secondAttribute="top" id="3Ij-Pf-Cpp"/>
+                                    <constraint firstItem="cNn-nx-a5Q" firstAttribute="leading" secondItem="ttC-Ob-9fX" secondAttribute="leading" id="AtC-zI-JcE"/>
+                                    <constraint firstAttribute="trailing" secondItem="cNn-nx-a5Q" secondAttribute="trailing" id="BiH-7D-cil"/>
+                                    <constraint firstAttribute="width" constant="400" id="D1h-fE-sy6"/>
+                                    <constraint firstAttribute="height" constant="300" id="Qlh-eY-oYJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="Edb-t6-gAf" secondAttribute="trailing" id="Rjk-EH-GQh"/>
+                                    <constraint firstAttribute="bottom" secondItem="cNn-nx-a5Q" secondAttribute="bottom" id="ZO3-Sh-XC3"/>
+                                    <constraint firstItem="Edb-t6-gAf" firstAttribute="leading" secondItem="ttC-Ob-9fX" secondAttribute="leading" id="l8R-Dc-rmZ"/>
+                                    <constraint firstItem="cNn-nx-a5Q" firstAttribute="top" secondItem="Edb-t6-gAf" secondAttribute="bottom" constant="1" id="xTE-LV-YVz"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aOo-BT-ege"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nqS-Ec-lKm" firstAttribute="top" secondItem="aOo-BT-ege" secondAttribute="top" id="9vf-fW-AfN"/>
+                            <constraint firstItem="ttC-Ob-9fX" firstAttribute="leading" secondItem="aOo-BT-ege" secondAttribute="leading" id="FBe-z4-3VU"/>
+                            <constraint firstItem="nqS-Ec-lKm" firstAttribute="leading" secondItem="aOo-BT-ege" secondAttribute="leading" id="HiY-q7-174"/>
+                            <constraint firstItem="nqS-Ec-lKm" firstAttribute="trailing" secondItem="aOo-BT-ege" secondAttribute="trailing" id="HpA-0C-htX"/>
+                            <constraint firstItem="nqS-Ec-lKm" firstAttribute="bottom" secondItem="aOo-BT-ege" secondAttribute="bottom" id="TiL-7R-5Cb"/>
+                            <constraint firstItem="ttC-Ob-9fX" firstAttribute="bottom" secondItem="aOo-BT-ege" secondAttribute="bottom" id="rfL-d6-Xxs"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="customDatePicker" destination="Edb-t6-gAf" id="NLs-kd-pQf"/>
+                        <outlet property="customDatePickerHAlignConstraint" destination="FBe-z4-3VU" id="56V-28-ae3"/>
+                        <outlet property="customDatePickerHeightConstraint" destination="Qlh-eY-oYJ" id="RhA-XD-evn"/>
+                        <outlet property="customDatePickerVAlignConstraint" destination="rfL-d6-Xxs" id="oz2-Z5-zc4"/>
+                        <outlet property="customDatePickerView" destination="ttC-Ob-9fX" id="0gG-Lh-Avu"/>
+                        <outlet property="customDatePickerWidthConstraint" destination="D1h-fE-sy6" id="YCQ-V3-KYL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Okp-ho-bcw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="N2t-CE-631">
+                    <connections>
+                        <action selector="onCancel:" destination="zfs-LW-J2k" id="kUI-HA-Lin"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1037" y="139"/>
+        </scene>
+        <!--Color Picker View Controller-->
+        <scene sceneID="hk0-r1-I0u">
+            <objects>
+                <viewController storyboardIdentifier="STColorPickerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0Z4-Ex-As2" customClass="STColorPickerViewController" customModule="eVAS_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zn8-hQ-q8B">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haC-fI-49a" userLabel="Exit Button">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="exitPrompt:" destination="0Z4-Ex-As2" eventType="touchUpInside" id="7TE-fn-xiI"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zYl-DA-iNU" customClass="STView" customModule="eVAS_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="144" y="352" width="480" height="320"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="zYl-DA-iNU" secondAttribute="height" multiplier="3:2" id="2CI-Sf-l6q"/>
+                                    <constraint firstAttribute="width" constant="480" id="V07-aP-pX4"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color Picker" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lk-VF-ZvT" customClass="HeadingLabel" customModule="eVAS_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="338" y="368" width="92.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="imi-Rw-KuV" userLabel="Hex">
+                                <rect key="frame" x="160" y="432" width="448" height="32"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3Oz-vG-9Yd">
+                                        <rect key="frame" x="0.0" y="0.0" width="130.5" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDH-K2-TAo" customClass="BodyLabel" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="10.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="FFFFFF" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hMf-ya-FV1" customClass="TextField" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                <rect key="frame" x="14.5" y="0.0" width="116" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isUnderlined" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBoxed" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rmb-pn-G9P" customClass="STView" customModule="eVAS_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="134.5" y="0.0" width="313.5" height="32"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="shadow" value="NO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="gHY-ah-QoX"/>
+                                    <constraint firstItem="Rmb-pn-G9P" firstAttribute="width" secondItem="imi-Rw-KuV" secondAttribute="width" multiplier="0.7" id="tjw-q3-7ic"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zn8-LJ-iWK" userLabel="R">
+                                <rect key="frame" x="160" y="472" width="448" height="32"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="GD7-Ge-5NO">
+                                        <rect key="frame" x="0.0" y="0.0" width="130.5" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b58-pQ-O3G" customClass="BodyLabel" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="11" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="255" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CWh-5w-pj8" customClass="TextField" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="0.0" width="115.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isUnderlined" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBoxed" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="Dn4-CA-UZJ">
+                                        <rect key="frame" x="132.5" y="0.0" width="317.5" height="33"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColorComponent:" destination="0Z4-Ex-As2" eventType="valueChanged" id="MtU-FP-5wP"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Dn4-CA-UZJ" firstAttribute="width" secondItem="zn8-LJ-iWK" secondAttribute="width" multiplier="0.7" id="32F-7Y-wYf"/>
+                                    <constraint firstAttribute="height" constant="32" id="Yxo-M9-uik"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="2Rd-oT-gpd" userLabel="G">
+                                <rect key="frame" x="160" y="512" width="448" height="32"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="LxJ-7K-bQT">
+                                        <rect key="frame" x="0.0" y="0.0" width="130.5" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0J-EZ-cjv" customClass="BodyLabel" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="12.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="255" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6GG-Qa-me3" customClass="TextField" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                <rect key="frame" x="16.5" y="0.0" width="114" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isUnderlined" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBoxed" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="bje-MT-UyQ">
+                                        <rect key="frame" x="132.5" y="0.0" width="317.5" height="33"/>
+                                        <color key="tintColor" red="0.0" green="0.72592979753521125" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColorComponent:" destination="0Z4-Ex-As2" eventType="valueChanged" id="olw-9R-mzm"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="fQW-A8-Egw"/>
+                                    <constraint firstItem="bje-MT-UyQ" firstAttribute="width" secondItem="2Rd-oT-gpd" secondAttribute="width" multiplier="0.7" id="toJ-Ud-2uY"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fJ5-6R-Lfv" userLabel="B">
+                                <rect key="frame" x="160" y="552" width="448" height="32"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="4O4-tq-chx">
+                                        <rect key="frame" x="0.0" y="0.0" width="130.5" height="32"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFf-Sa-OhR" customClass="BodyLabel" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="11" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="255" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bUz-Bb-EW1" customClass="TextField" customModule="eVAS_Tracker" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="0.0" width="115.5" height="32"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isUnderlined" value="NO"/>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isBoxed" value="NO"/>
+                                                </userDefinedRuntimeAttributes>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="255" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="UaO-eN-L7O">
+                                        <rect key="frame" x="132.5" y="0.0" width="317.5" height="33"/>
+                                        <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="changeColorComponent:" destination="0Z4-Ex-As2" eventType="valueChanged" id="fss-Op-HbT"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="UJf-2d-6qG"/>
+                                    <constraint firstItem="UaO-eN-L7O" firstAttribute="width" secondItem="fJ5-6R-Lfv" secondAttribute="width" multiplier="0.7" id="qPs-mr-2dZ"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Cuq-Fs-zt4" userLabel="Buttons">
+                                <rect key="frame" x="160" y="624" width="448" height="32"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQa-4E-Mcz" customClass="NegativeButton" customModule="eVAS_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="32"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableShadow" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="exitPrompt:" destination="0Z4-Ex-As2" eventType="touchUpInside" id="MGI-It-6sh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJ2-H4-jcd" customClass="PositiveButton" customModule="eVAS_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="228" y="0.0" width="220" height="32"/>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="OK"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="enableShadow" value="NO"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="acceptColor:" destination="0Z4-Ex-As2" eventType="touchUpInside" id="jMr-YM-9Gv"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="3E1-FB-I06"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gPg-oy-nsz"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="fJ5-6R-Lfv" firstAttribute="top" secondItem="2Rd-oT-gpd" secondAttribute="bottom" constant="8" id="18f-MZ-SeQ"/>
+                            <constraint firstItem="gPg-oy-nsz" firstAttribute="bottom" secondItem="haC-fI-49a" secondAttribute="bottom" id="3gR-n1-kcK"/>
+                            <constraint firstItem="fJ5-6R-Lfv" firstAttribute="trailing" secondItem="zYl-DA-iNU" secondAttribute="trailing" constant="-16" id="4be-bF-wWX"/>
+                            <constraint firstItem="Cuq-Fs-zt4" firstAttribute="bottom" secondItem="zYl-DA-iNU" secondAttribute="bottom" constant="-16" id="80u-YI-PTv"/>
+                            <constraint firstItem="2Rd-oT-gpd" firstAttribute="trailing" secondItem="zYl-DA-iNU" secondAttribute="trailing" constant="-16" id="AA9-0E-63v"/>
+                            <constraint firstItem="zYl-DA-iNU" firstAttribute="centerY" secondItem="Zn8-hQ-q8B" secondAttribute="centerY" id="AGb-yO-geX"/>
+                            <constraint firstItem="gPg-oy-nsz" firstAttribute="trailing" secondItem="haC-fI-49a" secondAttribute="trailing" id="B5q-bK-XkD"/>
+                            <constraint firstItem="6lk-VF-ZvT" firstAttribute="centerX" secondItem="Zn8-hQ-q8B" secondAttribute="centerX" id="CFc-Mm-ap3"/>
+                            <constraint firstItem="zYl-DA-iNU" firstAttribute="centerX" secondItem="Zn8-hQ-q8B" secondAttribute="centerX" id="GaM-hA-SYY"/>
+                            <constraint firstItem="Cuq-Fs-zt4" firstAttribute="leading" secondItem="zYl-DA-iNU" secondAttribute="leading" constant="16" id="N3V-mU-sDI"/>
+                            <constraint firstItem="imi-Rw-KuV" firstAttribute="leading" secondItem="zYl-DA-iNU" secondAttribute="leading" constant="16" id="WDy-MT-SBP"/>
+                            <constraint firstItem="6lk-VF-ZvT" firstAttribute="top" secondItem="zYl-DA-iNU" secondAttribute="top" constant="16" id="acb-sw-g4M"/>
+                            <constraint firstItem="zn8-LJ-iWK" firstAttribute="top" secondItem="imi-Rw-KuV" secondAttribute="bottom" constant="8" id="c9q-og-S3p"/>
+                            <constraint firstItem="2Rd-oT-gpd" firstAttribute="leading" secondItem="zYl-DA-iNU" secondAttribute="leading" constant="16" id="eIr-Fv-HJT"/>
+                            <constraint firstItem="zn8-LJ-iWK" firstAttribute="bottom" secondItem="Zn8-hQ-q8B" secondAttribute="centerY" constant="-8" id="ehN-iG-Pwe"/>
+                            <constraint firstItem="2Rd-oT-gpd" firstAttribute="top" secondItem="zn8-LJ-iWK" secondAttribute="bottom" constant="8" id="fFY-NG-8Da"/>
+                            <constraint firstItem="haC-fI-49a" firstAttribute="top" secondItem="gPg-oy-nsz" secondAttribute="top" id="gZq-1r-hF0"/>
+                            <constraint firstItem="zn8-LJ-iWK" firstAttribute="trailing" secondItem="zYl-DA-iNU" secondAttribute="trailing" constant="-16" id="gug-fy-Sw1"/>
+                            <constraint firstItem="imi-Rw-KuV" firstAttribute="trailing" secondItem="zYl-DA-iNU" secondAttribute="trailing" constant="-16" id="jMx-jd-cby"/>
+                            <constraint firstItem="haC-fI-49a" firstAttribute="leading" secondItem="gPg-oy-nsz" secondAttribute="leading" id="koz-xM-ed5"/>
+                            <constraint firstItem="zn8-LJ-iWK" firstAttribute="leading" secondItem="zYl-DA-iNU" secondAttribute="leading" constant="16" id="loJ-aZ-Wpa"/>
+                            <constraint firstItem="Cuq-Fs-zt4" firstAttribute="trailing" secondItem="zYl-DA-iNU" secondAttribute="trailing" constant="-16" id="mg2-Ic-S2v"/>
+                            <constraint firstItem="fJ5-6R-Lfv" firstAttribute="leading" secondItem="zYl-DA-iNU" secondAttribute="leading" constant="16" id="vSM-X4-UUn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="blueField" destination="bUz-Bb-EW1" id="1Ux-OG-TmI"/>
+                        <outlet property="blueSlider" destination="UaO-eN-L7O" id="ODJ-VH-dwb"/>
+                        <outlet property="colorView" destination="Rmb-pn-G9P" id="2Gv-uB-edx"/>
+                        <outlet property="greenField" destination="6GG-Qa-me3" id="k0G-fy-iVx"/>
+                        <outlet property="greenSlider" destination="bje-MT-UyQ" id="1gf-1p-uFh"/>
+                        <outlet property="hexField" destination="hMf-ya-FV1" id="y4a-LF-j6J"/>
+                        <outlet property="redField" destination="CWh-5w-pj8" id="h9H-m6-cJR"/>
+                        <outlet property="redSlider" destination="Dn4-CA-UZJ" id="4dg-Au-6pp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iJe-N7-CjA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1893" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
